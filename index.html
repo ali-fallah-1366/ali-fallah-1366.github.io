@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08285a">
+<meta name="description" content="Dr. Ali Fallah — Assistant Professor at Atılım University. Research in additive and 4D manufacturing, smart materials, computational mechanics, physics-informed machine learning, neural operators, and digital twins.">
+<meta property="og:title" content="Dr. Ali Fallah | Academic Homepage">
+<meta property="og:description" content="Additive Manufacturing · 4D Printing · Smart Materials · Computational Mechanics · Physics-Informed AI · Digital Twins">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/research-banner.png">
+<title>Dr. Ali Fallah | Academic Homepage</title>
+<style>
+:root{
+  --bg:#f5f8fc;--surface:#fff;--ink:#14243a;--muted:#617083;
+  --line:#dce5ee;--navy:#08285a;--navy2:#0d3b79;--cyan:#27a6cf;
+  --soft:#edf6fb;--shadow:0 16px 40px rgba(13,42,78,.08);--r:22px
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.62}
+a{color:inherit} .wrap{width:min(1210px,92%);margin:auto}
+.skip{position:absolute;left:-9999px} .skip:focus{left:12px;top:12px;z-index:100;background:white;padding:10px}
+nav{position:sticky;top:0;z-index:50;background:rgba(245,248,252,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,238,.94)}
+.navin{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-weight:900;letter-spacing:-.025em;color:var(--navy);text-decoration:none}
+.links{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
+.links a:hover{color:var(--navy)} .navcv{border:1px solid var(--line);padding:8px 11px;border-radius:10px;background:white}
+.hero{padding:28px 0 16px}
+.hero-box{position:relative;overflow:hidden;border-radius:30px;min-height:525px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.hero-box::before{content:"";position:absolute;inset:0;background-image:url("assets/research-banner.png");background-repeat:no-repeat;background-size:cover;background-position:center}
+.hero-box::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.96) 34%,rgba(255,255,255,.72) 47%,rgba(255,255,255,.08) 70%)}
+.hero-content{position:relative;z-index:2;width:58%;min-height:525px;padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.kicker,.tag{display:inline-flex;align-self:flex-start;background:var(--soft);color:#157aa5;border-radius:999px;padding:7px 11px;font-size:.77rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(3.1rem,7vw,5.8rem);line-height:.92;letter-spacing:-.06em;margin:16px 0;color:var(--navy)}
+.role{font-size:1.18rem;font-weight:750;color:#27415f;margin-bottom:16px}
+.keywords{font-size:clamp(1.04rem,1.8vw,1.36rem);line-height:1.55;color:#233650}
+.sep{color:var(--cyan);padding:0 .18em}
+.subkeywords{margin-top:12px;color:#1d7196;font-weight:650}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;text-decoration:none;border-radius:11px;padding:11px 14px;font-weight:780;border:1px solid var(--navy)}
+.btn.primary{background:var(--navy);color:white} .btn.light{background:white;color:var(--navy)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:25px}
+.metric{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:14px;padding:12px 9px;text-align:center}
+.metric b{display:block;color:var(--navy);font-size:1.25rem} .metric span{font-size:.78rem;color:var(--muted)}
+
+section{padding:66px 0} section.white{background:#fff}
+.head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:25px}
+.head h2{margin:7px 0 0;color:var(--navy);font-size:2rem;letter-spacing:-.03em}
+.head p{max-width:680px;margin:0;color:var(--muted)}
+.card{background:white;border:1px solid var(--line);border-radius:var(--r);padding:23px;box-shadow:var(--shadow)}
+
+.about-grid{display:grid;grid-template-columns:310px 1fr;gap:22px}
+.portrait img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:17px}
+.portrait h3{margin:17px 0 4px;color:var(--navy)} .portrait p{margin:0;color:var(--muted)}
+.socials{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:17px}
+.socials a{text-decoration:none;border:1px solid var(--line);background:#f9fbfe;border-radius:10px;padding:9px 10px;font-size:.87rem;font-weight:700;color:#29445f}
+.profile-copy{font-size:1.02rem;color:var(--muted);margin:0}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:19px}
+.ibox{border:1px solid var(--line);background:#f9fbfe;border-radius:15px;padding:15px}
+.ibox b{display:block;color:var(--navy);margin-bottom:5px} .ibox span{color:var(--muted);font-size:.91rem}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pillar{background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.pillar .n{font-size:.8rem;font-weight:900;color:var(--cyan);letter-spacing:.08em}
+.pillar h3{color:var(--navy);margin:7px 0 9px} .pillar p{margin:0;color:var(--muted)} .pillar ul{color:var(--muted);padding-left:18px;margin-bottom:0}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project .meta{text-transform:uppercase;letter-spacing:.07em;color:#1685b3;font-weight:850;font-size:.78rem}
+.project h3{color:var(--navy);font-size:1.12rem;margin:8px 0 9px} .project p{color:var(--muted);margin:0}
+
+.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.hcard{background:white;border:1px solid var(--line);border-radius:19px;padding:20px;box-shadow:var(--shadow)}
+.hcard .date{font-size:.78rem;font-weight:850;color:#1685b3;text-transform:uppercase;letter-spacing:.06em}
+.hcard h3{font-size:1.03rem;line-height:1.5;color:var(--navy);margin:9px 0} .hcard p{color:var(--muted);margin:0;font-size:.94rem}
+
+.featured{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.fpub{background:white;border:1px solid var(--line);border-radius:19px;padding:21px;box-shadow:var(--shadow)}
+.fpub .year{display:inline-flex;padding:5px 9px;background:var(--soft);color:#1685b3;border-radius:999px;font-weight:850;font-size:.78rem}
+.fpub h3{font-size:1rem;line-height:1.5;color:var(--navy);margin:11px 0 8px} .fpub p{color:var(--muted);font-size:.91rem}
+.fpub a{text-decoration:none;color:var(--navy);font-weight:800;font-size:.9rem}
+
+.pubtoolbar{display:grid;grid-template-columns:1fr auto;gap:12px;margin-bottom:13px}
+#search{width:100%;font:inherit;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:white}
+.filters{display:flex;flex-wrap:wrap;gap:7px}
+.filters button{font:inherit;font-size:.86rem;font-weight:750;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--muted);cursor:pointer}
+.filters button.active{background:var(--navy);border-color:var(--navy);color:white}
+.pubmeta{display:flex;justify-content:space-between;color:var(--muted);font-size:.87rem;margin-bottom:11px}
+.pub-list{display:grid;gap:9px}
+.pub-item{display:grid;grid-template-columns:70px 1fr;gap:15px;background:white;border:1px solid var(--line);border-radius:15px;padding:16px 18px}
+.pub-item h4{margin:0 0 5px;font-size:.99rem;line-height:1.45;color:var(--ink)}
+.pub-item .authors{margin:0;color:#43546a;font-size:.88rem}
+.pub-item .venue{margin:3px 0 0;color:var(--muted);font-size:.89rem}
+.pub-item .pub-year{font-weight:900;color:#1685b3}
+.pub-item .doi{color:var(--navy);text-decoration:none;font-weight:800;margin-left:5px}
+.hidden{display:none!important}
+
+.teaching{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.course{padding:12px 0;border-bottom:1px solid var(--line)} .course:last-child{border-bottom:0}
+.course b{display:block;color:var(--navy)} .course span{color:var(--muted);font-size:.94rem}
+.opportunities{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
+.topic{border:1px solid var(--line);border-radius:12px;padding:11px;background:#f9fbfe;color:#40536a;font-size:.9rem}
+.cta{background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;border-radius:27px;padding:32px;display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center}
+.cta h2{margin:9px 0;color:white} .cta p{color:#d9e4f3}
+.ctalinks{display:grid;gap:9px} .ctalinks a{text-decoration:none;padding:11px 13px;background:rgba(255,255,255,.1);border-radius:10px}
+footer{padding:28px 0 42px;color:var(--muted);font-size:.9rem}
+
+@media(max-width:1000px){
+ .hero-content{width:72%} .about-grid{grid-template-columns:1fr} .portrait{max-width:420px}
+ .pillars,.highlights,.featured{grid-template-columns:1fr 1fr} .projects,.teaching,.opportunities,.cta{grid-template-columns:1fr}
+ .info{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+ .links{display:none} .hero-box::after{background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.89))}
+ .hero-content{width:100%;padding:35px 24px;min-height:535px} .hero-box{min-height:535px}
+ .metrics{grid-template-columns:1fr 1fr} .pillars,.highlights,.featured,.info,.topic-grid{grid-template-columns:1fr}
+ .head{display:block} .head p{margin-top:9px} .pubtoolbar{grid-template-columns:1fr} .pub-item{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+<div class="wrap navin">
+<a class="brand" href="#top">Ali Fallah</a>
+<div class="links">
+<a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a>
+<a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#opportunities">Opportunities</a>
+<a class="navcv" href="assets/Ali-Fallah-CV.pdf" target="_blank">CV</a>
+</div>
+</div>
+</nav>
+
+<main id="main">
+<header class="hero" id="top">
+<div class="wrap">
+<div class="hero-box">
+<div class="hero-content">
+<span class="kicker">Academic Homepage</span>
+<h1>Ali Fallah</h1>
+<div class="role">Assistant Professor · Automotive Engineering · Atılım University</div>
+<div class="keywords">
+Additive Manufacturing <span class="sep">|</span> 4D Printing <span class="sep">|</span>
+Smart Materials <span class="sep">|</span> Computational Mechanics <span class="sep">|</span>
+Physics-Informed AI
+</div>
+<div class="subkeywords">Auxetic Structures · Composite Materials · Neural Operators · Digital Twins</div>
+<div class="hero-actions">
+<a class="btn primary" href="#research">Explore Research</a>
+<a class="btn light" href="#publications">Publications</a>
+</div>
+<div class="metrics">
+<div class="metric"><b>50+</b><span>Scholarly publications</span></div>
+<div class="metric"><b>~1,850</b><span>Google Scholar citations</span></div>
+<div class="metric"><b>22</b><span>h-index</span></div>
+<div class="metric"><b>150+</b><span>Manuscript reviews</span></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<section id="about">
+<div class="wrap about-grid">
+<aside class="card portrait">
+<img src="assets/ali-fallah.jpg" alt="Dr. Ali Fallah">
+<h3>Dr. Ali Fallah</h3>
+<p>Assistant Professor<br>Department of Automotive Engineering<br>Atılım University · Ankara, Türkiye</p>
+<div class="socials">
+<a href="https://www.atilim.edu.tr/en/ae" target="_blank" rel="noopener">Atılım University ↗</a>
+<a href="https://www.linkedin.com/in/ali-fallah-b1309411a" target="_blank" rel="noopener">LinkedIn ↗</a>
+<a href="https://orcid.org/0000-0002-7744-4246" target="_blank" rel="noopener">ORCID ↗</a>
+<a href="https://www.scopus.com/authid/detail.uri?authorId=55196291500" target="_blank" rel="noopener">Scopus ↗</a>
+<a href="mailto:ali.fallah@atilim.edu.tr">Email</a>
+<a href="assets/Ali-Fallah-CV.pdf" target="_blank">Full CV ↗</a>
+</div>
+</aside>
+<div class="card">
+<span class="tag">Academic profile</span>
+<h2 style="color:var(--navy);margin:10px 0 12px;font-size:2rem">Mechanics, manufacturing, and scientific AI</h2>
+<p class="profile-copy">I am an interdisciplinary mechanical engineer working at the intersection of computational mechanics, additive manufacturing and 4D printing, programmable materials, and scientific machine learning. My research integrates finite-element and constitutive modelling, multiscale mechanics, experimental characterization, physics-informed machine learning, neural operators, and digital twins to advance zero-defect manufacturing, resource-efficient design, and multifunctional, adaptive, and reusable structures.</p>
+<div class="info">
+<div class="ibox"><b>Advanced Manufacturing</b><span>3D/4D printing, continuous-fiber composites, multimaterial systems, smart structures.</span></div>
+<div class="ibox"><b>Computational Mechanics</b><span>FEA, constitutive modelling, micromechanics, homogenization, nonlinear mechanics.</span></div>
+<div class="ibox"><b>Scientific Machine Learning</b><span>PINNs, neural operators, surrogate modelling, inverse design, digital twins.</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="white" id="research">
+<div class="wrap">
+<div class="head"><div><span class="tag">Research</span><h2>Three connected research pillars</h2></div>
+<p>My research links physical manufacturing and experiments with mechanics-based modelling and data-efficient scientific machine learning.</p></div>
+<div class="pillars">
+<article class="pillar"><div class="n">01</div><h3>Advanced Manufacturing & Materials</h3><p>Design and fabrication of smart, architected, and multifunctional material systems.</p><ul><li>Additive & 4D manufacturing</li><li>Shape-memory polymers</li><li>Continuous-fiber and multimaterial composites</li><li>Auxetic, architected, and phononic materials</li><li>Recoverable energy absorbers</li></ul></article>
+<article class="pillar"><div class="n">02</div><h3>Computational & Applied Mechanics</h3><p>Physics-based modelling of material and structural behavior across scales.</p><ul><li>Finite-element analysis</li><li>Nonlinear constitutive modelling</li><li>Micromechanics & homogenization</li><li>Multiscale and multiphysics modelling</li><li>Dynamics, vibration, stability & buckling</li></ul></article>
+<article class="pillar"><div class="n">03</div><h3>Scientific ML & Digital Engineering</h3><p>Physics-aware AI for simulation, prediction, optimization, and intelligent manufacturing.</p><ul><li>Physics-informed neural networks</li><li>DeepONet & Fourier neural operators</li><li>Hybrid physics/data-driven modelling</li><li>Surrogate modelling & inverse design</li><li>Digital twins and process optimization</li></ul></article>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+<div class="head"><div><span class="tag">Funding</span><h2>Selected funded research</h2></div><p>Nationally funded projects spanning smart composites, digital manufacturing, phononic structures, and adaptive systems.</p></div>
+<div class="projects">
+<article class="card project"><div class="meta">TÜBİTAK 1001 · Principal Investigator · 2026–2029</div><h3>Physics-Informed Digital Twin for Rapid Defect Detection and Mitigation via G-Code Optimization in Directed Energy Deposition</h3><p>Physics-informed digital manufacturing for rapid thermal-field prediction, defect-risk evaluation, and G-code optimization.</p></article>
+<article class="card project"><div class="meta">TÜBİTAK 1001 · Principal Investigator · 2021–2024</div><h3>4D-Printed Smart Electro-Active and Load-Bearing Composite Structures with In-Field Shape Recovery</h3><p>Smart composite systems integrating load bearing, functionality, additive manufacturing, and recoverable programmed deformation.</p></article>
+<article class="card project"><div class="meta">TÜBİTAK 1001 · Researcher · 2026–2029</div><h3>Innovative Integrated Design and 4D Printing of Phononic Sandwich Composites with Tunable Bandgap Behavior</h3><p>Integrated design and 4D printing of adaptive sandwich architectures for tunable wave-propagation behavior.</p></article>
+<article class="card project"><div class="meta">TÜBİTAK 1001 · Researcher · 2026–2029</div><h3>Design and Development of a Novel Soft-Legged Mobile Robot</h3><p>Collaborative research on mechanically adaptive concepts and advanced engineering design for soft robotic locomotion.</p></article>
+</div>
+</div>
+</section>
+
+<section class="white">
+<div class="wrap">
+<div class="head"><div><span class="tag">Highlights</span><h2>Recent academic highlights</h2></div><p>Selected research, teaching, and scientific-service activities.</p></div>
+<div class="highlights">
+<article class="hcard"><div class="date">2026 · Research</div><h3>Physics-informed micromechanics in International Journal of Solids and Structures</h3><p>PINN-based tensile and shear micromechanics with systematic hyperparameter optimization.</p></article>
+<article class="hcard"><div class="date">2026 · Research funding</div><h3>Physics-informed DED digital twin project accepted</h3><p>A TÜBİTAK 1001 project focused on rapid defect detection and mitigation through G-code optimization.</p></article>
+<article class="hcard"><div class="date">2026 · Scientific service</div><h3>Physics-Informed Machine Learning symposium at ICNAAM 2026</h3><p>Co-organizer of a symposium dedicated to physics-informed machine learning and engineering applications.</p></article>
+<article class="hcard"><div class="date">2026 · Teaching</div><h3>Physics-Informed Machine Learning course incorporated into the curriculum</h3><p>Development of an engineering-focused course covering PINNs and related scientific-ML approaches.</p></article>
+<article class="hcard"><div class="date">2025–2026 · Student research</div><h3>Project-based additive manufacturing and smart-materials education</h3><p>Integration of computation, manufacturing, laboratory work, and open-ended projects in engineering teaching.</p></article>
+<article class="hcard"><div class="date">Professional service</div><h3>150+ peer reviews for international journals and conferences</h3><p>Review activity spanning mechanics, materials, manufacturing, modelling, and scientific machine learning.</p></article>
+</div>
+</div>
+</section>
+
+<section id="publications">
+<div class="wrap">
+<div class="head"><div><span class="tag">Publications</span><h2>Featured & complete publication record</h2></div><p>Representative papers are highlighted first; the complete CV-based list is searchable below.</p></div>
+<div class="featured">
+<article class="fpub"><span class="year">2026</span><h3>Physics-Informed Neural Networks for Micromechanics in Tensile and Shear Loading with Hyperparameter Optimization</h3><p>International Journal of Solids and Structures</p><a href="https://doi.org/10.1016/j.ijsolstr.2026.114125" target="_blank">View paper ↗</a></article>
+<article class="fpub"><span class="year">2026</span><h3>4D-Printed Continuous Fiber-Reinforced PLA/TPU Auxetic Composites</h3><p>Progress in Additive Manufacturing</p><a href="https://doi.org/10.1007/s40964-025-01359-z" target="_blank">View paper ↗</a></article>
+<article class="fpub"><span class="year">2025</span><h3>4D Printing of Reusable Mechanical Metamaterial Energy Absorber</h3><p>Smart Materials and Structures</p><a href="https://doi.org/10.1088/1361-665X/addead" target="_blank">View paper ↗</a></article>
+<article class="fpub"><span class="year">2024</span><h3>Mechanical Properties and Shape-Memory Behavior of 4D-Printed Continuous Fiber-Reinforced PETG Composites</h3><p>Composites Part A</p><a href="https://doi.org/10.1016/j.compositesa.2024.108165" target="_blank">View paper ↗</a></article>
+<article class="fpub"><span class="year">2023</span><h3>4D Printing of Continuous Fiber-Reinforced Electroactive Composites by Coaxial Additive Manufacturing</h3><p>Composite Structures</p><a href="https://doi.org/10.1016/j.compstruct.2023.117034" target="_blank">View paper ↗</a></article>
+<article class="fpub"><span class="year">2017</span><h3>Rate-Dependent Behavior of Connective Tissue through a Micromechanics-Based Hyper Viscoelastic Model</h3><p>International Journal of Engineering Science</p><a href="https://doi.org/10.1016/j.ijengsci.2017.09.003" target="_blank">View paper ↗</a></article>
+</div>
+
+<h3 style="color:var(--navy);margin:38px 0 12px">Complete list</h3>
+<div class="pubtoolbar">
+<input id="search" type="search" aria-label="Search publications" placeholder="Search title, author, journal, keyword, or year…">
+<div class="filters">
+<button class="active" data-filter="all">All</button>
+<button data-filter="journal">Journal articles</button>
+<button data-filter="book">Book chapters</button>
+<button data-filter="conference">Conference papers</button>
+</div>
+</div>
+<div class="pubmeta"><span>* Corresponding author where marked in the CV.</span><span id="count"></span></div>
+<div class="pub-list"><article class="pub-item" data-type="journal" data-year="2026" data-search="2026 fallah, a*., saleem, q., & koc, b. an investigation of mechanical properties and energy absorption behavior of foam-filled 3d-printed sandwich structures. mechanics based design of structures and machines.">
+<div class="pub-year">2026</div>
+<div>
+<h4>An Investigation of Mechanical Properties and Energy Absorption Behavior of Foam-Filled 3D-Printed Sandwich Structures.</h4>
+<p class="authors">Fallah, A*., Saleem, Q., &amp; Koc, B.</p>
+<p class="venue">Mechanics Based Design of Structures and Machines. <a class="doi" href="https://doi.org/10.1080/15397734.2026.2688884" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2026" data-search="2026 shirmohammadi, s., mostajeran, s., fallah, a*., & aghdam, m.m. physics-informed neural networks for micromechanics in tensile and shear loading with hyperparameter optimization. international journal of solids and structures, 114125.">
+<div class="pub-year">2026</div>
+<div>
+<h4>Physics-Informed Neural Networks for Micromechanics in Tensile and Shear Loading with Hyperparameter Optimization.</h4>
+<p class="authors">Shirmohammadi, S., Mostajeran, S., Fallah, A*., &amp; Aghdam, M.M.</p>
+<p class="venue">International Journal of Solids and Structures, 114125. <a class="doi" href="https://doi.org/10.1016/j.ijsolstr.2026.114125" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2026" data-search="2026 alkan, a., ranjbar, a., fallah, a*., & koc, b. 4d-printed continuous fiber-reinforced pla/tpu auxetic composites: mechanical performance, energy absorption, shape recovery, and reusability evaluation. progress in additive manufacturing.">
+<div class="pub-year">2026</div>
+<div>
+<h4>4D-Printed Continuous Fiber-Reinforced PLA/TPU Auxetic Composites: Mechanical Performance, Energy Absorption, Shape Recovery, and Reusability Evaluation.</h4>
+<p class="authors">Alkan, A., Ranjbar, A., Fallah, A*., &amp; Koc, B.</p>
+<p class="venue">Progress in Additive Manufacturing. <a class="doi" href="https://doi.org/10.1007/s40964-025-01359-z" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2026" data-search="2026 ansaripour, a., heidari-rarani, m., mahshid, r., & fallah, a. dic-informed finite element modeling of thermally induced shape-morphing in 4d-printed shape memory polymers. the international journal of advanced manufacturing technology.">
+<div class="pub-year">2026</div>
+<div>
+<h4>DIC-Informed Finite Element Modeling of Thermally Induced Shape-Morphing in 4D-Printed Shape Memory Polymers.</h4>
+<p class="authors">Ansaripour, A., Heidari-Rarani, M., Mahshid, R., &amp; Fallah, A.</p>
+<p class="venue">The International Journal of Advanced Manufacturing Technology. <a class="doi" href="https://doi.org/10.1007/s00170-026-18019-3" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2026" data-search="2026 maleki-ghaleh, h., et al. bioactive copper-doped natural hydroxyapatite quantum dots/graphene oxide nanocomposites in 3d-printed pcl scaffolds for superior osteogenic and angiogenic performance in bone tissue engineering. advanced healthcare materials.">
+<div class="pub-year">2026</div>
+<div>
+<h4>Bioactive Copper-Doped Natural Hydroxyapatite Quantum Dots/Graphene Oxide Nanocomposites in 3D-Printed PCL Scaffolds for Superior Osteogenic and Angiogenic Performance in Bone Tissue Engineering.</h4>
+<p class="authors">Maleki-Ghaleh, H., et al.</p>
+<p class="venue">Advanced Healthcare Materials. <a class="doi" href="https://doi.org/10.1002/adhm.202503939" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2025" data-search="2025 fallah, a*., saleem, q., scalet, g., & koc, b. 4d printing of reusable mechanical metamaterial energy absorber: experimental and numerical investigation. smart materials and structures.">
+<div class="pub-year">2025</div>
+<div>
+<h4>4D Printing of Reusable Mechanical Metamaterial Energy Absorber: Experimental and Numerical Investigation.</h4>
+<p class="authors">Fallah, A*., Saleem, Q., Scalet, G., &amp; Koc, B.</p>
+<p class="venue">Smart Materials and Structures. <a class="doi" href="https://doi.org/10.1088/1361-665X/addead" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2025" data-search="2025 mirsadeghi, s., fallah, a*., & aghdam, m.m. physics-informed neural network for nonlinear bending analysis of nano-beams: a systematic hyperparameter optimization. mathematical and computational applications.">
+<div class="pub-year">2025</div>
+<div>
+<h4>Physics-Informed Neural Network for Nonlinear Bending Analysis of Nano-Beams: A Systematic Hyperparameter Optimization.</h4>
+<p class="authors">Mirsadeghi, S., Fallah, A*., &amp; Aghdam, M.M.</p>
+<p class="venue">Mathematical and Computational Applications. <a class="doi" href="https://doi.org/10.3390/mca30040072" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2025" data-search="2025 nopour, r., fallah, a*., & aghdam, m.m. large deflection analysis of functionally graded reinforced sandwich beams with auxetic core using physics-informed neural network. mechanics based design of structures and machines.">
+<div class="pub-year">2025</div>
+<div>
+<h4>Large Deflection Analysis of Functionally Graded Reinforced Sandwich Beams with Auxetic Core Using Physics-Informed Neural Network.</h4>
+<p class="authors">Nopour, R., Fallah, A*., &amp; Aghdam, M.M.</p>
+<p class="venue">Mechanics Based Design of Structures and Machines. <a class="doi" href="https://doi.org/10.1080/15397734.2025.2462674" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2025" data-search="2025 mirsadeghi, s., fallah, a*., & aghdam, m.m. physics-informed neural network for bending analysis of two-dimensional functionally graded nanobeams based on nonlocal strain-gradient theory. journal of computational applied mechanics.">
+<div class="pub-year">2025</div>
+<div>
+<h4>Physics-Informed Neural Network for Bending Analysis of Two-Dimensional Functionally Graded Nanobeams Based on Nonlocal Strain-Gradient Theory.</h4>
+<p class="authors">Mirsadeghi, S., Fallah, A*., &amp; Aghdam, M.M.</p>
+<p class="venue">Journal of Computational Applied Mechanics. <a class="doi" href="https://doi.org/10.22059/jcamech.2025.386451.1307" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2024" data-search="2024 nejatpour, m., fallah, a*., & koc, b. an overview of 4d printing of smart multifunctional continuous fiber-reinforced composites: recent advances and novel applications. advanced composites and hybrid materials.">
+<div class="pub-year">2024</div>
+<div>
+<h4>An Overview of 4D Printing of Smart Multifunctional Continuous Fiber-Reinforced Composites: Recent Advances and Novel Applications.</h4>
+<p class="authors">Nejatpour, M., Fallah, A*., &amp; Koc, B.</p>
+<p class="venue">Advanced Composites and Hybrid Materials. <a class="doi" href="https://doi.org/10.1007/s42114-024-00943-1" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2024" data-search="2024 fallah, a*., saleem, q., & koc, b. assessment of mechanical properties and shape-memory behavior of 4d-printed continuous fiber-reinforced petg composites. composites part a: applied science and manufacturing, 181, 108165.">
+<div class="pub-year">2024</div>
+<div>
+<h4>Assessment of Mechanical Properties and Shape-Memory Behavior of 4D-Printed Continuous Fiber-Reinforced PETG Composites.</h4>
+<p class="authors">Fallah, A*., Saleem, Q., &amp; Koc, B.</p>
+<p class="venue">Composites Part A: Applied Science and Manufacturing, 181, 108165. <a class="doi" href="https://doi.org/10.1016/j.compositesa.2024.108165" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2024" data-search="2024 nejatpour, m., fallah, a*., & koc, b. shape memory pla/tpu blend using high-speed thermo-kinetic mixing. acs omega.">
+<div class="pub-year">2024</div>
+<div>
+<h4>Shape Memory PLA/TPU Blend Using High-Speed Thermo-Kinetic Mixing.</h4>
+<p class="authors">Nejatpour, M., Fallah, A*., &amp; Koc, B.</p>
+<p class="venue">ACS Omega. <a class="doi" href="https://doi.org/10.1021/acsomega.4c04338" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2023" data-search="2023 fallah, a., asif, s., gokcer, g., & koc, b. 4d printing of continuous fiber-reinforced electroactive composites by coaxial additive manufacturing. composite structures, 316, 117034.">
+<div class="pub-year">2023</div>
+<div>
+<h4>4D Printing of Continuous Fiber-Reinforced Electroactive Composites by Coaxial Additive Manufacturing.</h4>
+<p class="authors">Fallah, A., Asif, S., Gokcer, G., &amp; Koc, B.</p>
+<p class="venue">Composite Structures, 316, 117034. <a class="doi" href="https://doi.org/10.1016/j.compstruct.2023.117034" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2023" data-search="2023 fallah, a*., & aghdam, m.m. physics-informed neural network for bending and free-vibration analysis of three-dimensional functionally graded porous beams resting on elastic foundation. engineering with computers.">
+<div class="pub-year">2023</div>
+<div>
+<h4>Physics-Informed Neural Network for Bending and Free-Vibration Analysis of Three-Dimensional Functionally Graded Porous Beams Resting on Elastic Foundation.</h4>
+<p class="authors">Fallah, A*., &amp; Aghdam, M.M.</p>
+<p class="venue">Engineering with Computers. <a class="doi" href="https://doi.org/10.1007/s00366-023-01799-7" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2023" data-search="2023 fallah, a., altunbek, m., cooper, g., weightman, a., blunn, g., koç, b., & bartolo, p. 3d-printed scaffold design for large bone defects for improved mechanical and biological properties. journal of the mechanical behavior of biomedical materials, 134.">
+<div class="pub-year">2023</div>
+<div>
+<h4>3D-Printed Scaffold Design for Large Bone Defects for Improved Mechanical and Biological Properties.</h4>
+<p class="authors">Fallah, A., Altunbek, M., Cooper, G., Weightman, A., Blunn, G., Koç, B., &amp; Bartolo, P.</p>
+<p class="venue">Journal of the Mechanical Behavior of Biomedical Materials, 134. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2023" data-search="2023 altunbek, m., afghah, f., fallah, a., acar, a.a., & koc, b. design and 3d printing of personalized hybrid and gradient structures for critical-size bone defects. acs applied bio materials.">
+<div class="pub-year">2023</div>
+<div>
+<h4>Design and 3D Printing of Personalized Hybrid and Gradient Structures for Critical-Size Bone Defects.</h4>
+<p class="authors">Altunbek, M., Afghah, F., Fallah, A., Acar, A.A., &amp; Koc, B.</p>
+<p class="venue">ACS Applied Bio Materials. <a class="doi" href="https://doi.org/10.1021/acsabm.3c00107" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2023" data-search="2023 zarrabi, a., et al. rhabdomyosarcoma: current therapy, challenges, and future approaches to treatment strategies. cancers, 15, 5269.">
+<div class="pub-year">2023</div>
+<div>
+<h4>Rhabdomyosarcoma: Current Therapy, Challenges, and Future Approaches to Treatment Strategies.</h4>
+<p class="authors">Zarrabi, A., et al.</p>
+<p class="venue">Cancers, 15, 5269. <a class="doi" href="https://doi.org/10.3390/cancers15215269" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2023" data-search="2023 daskalakis, e., et al. accelerated degradation of poly-ε-caprolactone composite scaffolds for large bone defects. polymers, 15, 670.">
+<div class="pub-year">2023</div>
+<div>
+<h4>Accelerated Degradation of Poly-ε-Caprolactone Composite Scaffolds for Large Bone Defects.</h4>
+<p class="authors">Daskalakis, E., et al.</p>
+<p class="venue">Polymers, 15, 670. <a class="doi" href="https://doi.org/10.3390/polym15030670" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2022" data-search="2022 daskalakis, e., et al. bone bricks: the effect of architecture and material composition on the mechanical and biological performance of bone scaffolds. acs omega, 7, 7515.">
+<div class="pub-year">2022</div>
+<div>
+<h4>Bone Bricks: The Effect of Architecture and Material Composition on the Mechanical and Biological Performance of Bone Scaffolds.</h4>
+<p class="authors">Daskalakis, E., et al.</p>
+<p class="venue">ACS Omega, 7, 7515. <a class="doi" href="https://doi.org/10.1021/acsomega.1c05437" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2022" data-search="2022 daskalakis, e., et al. in vitro evaluation of pore-size-graded bone scaffolds with different material composition. 3d printing and additive manufacturing.">
+<div class="pub-year">2022</div>
+<div>
+<h4>In Vitro Evaluation of Pore-Size-Graded Bone Scaffolds with Different Material Composition.</h4>
+<p class="authors">Daskalakis, E., et al.</p>
+<p class="venue">3D Printing and Additive Manufacturing. <a class="doi" href="https://doi.org/10.1089/3dp.2022.0138" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2022" data-search="2022 hadji, l., fallah, a., & aghdam, m.m. influence of the distribution pattern of porosity on the free vibration of functionally graded plates. structural engineering and mechanics, 82(2), 151–161.">
+<div class="pub-year">2022</div>
+<div>
+<h4>Influence of the distribution pattern of porosity on the free vibration of functionally graded plates.</h4>
+<p class="authors">Hadji, L., Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">Structural Engineering and Mechanics, 82(2), 151–161. <a class="doi" href="https://doi.org/10.12989/sem.2022.82.2.151" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2021" data-search="2021 maleki-ghaleh, h., et al. effect of zinc-doped hydroxyapatite/graphene nanocomposite on the physicochemical properties and osteogenesis differentiation of 3d-printed polycaprolactone scaffolds. chemical engineering journal, 426, 131321.">
+<div class="pub-year">2021</div>
+<div>
+<h4>Effect of Zinc-Doped Hydroxyapatite/Graphene Nanocomposite on the Physicochemical Properties and Osteogenesis Differentiation of 3D-Printed Polycaprolactone Scaffolds.</h4>
+<p class="authors">Maleki-Ghaleh, H., et al.</p>
+<p class="venue">Chemical Engineering Journal, 426, 131321. <a class="doi" href="https://doi.org/10.1016/j.cej.2021.131321" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2021" data-search="2021 hanay, s.b., et al. exploiting urazole’s ionic character for fabrication of anionic hydrogels and ion-exchange materials. gels, 7, 261.">
+<div class="pub-year">2021</div>
+<div>
+<h4>Exploiting Urazole’s Ionic Character for Fabrication of Anionic Hydrogels and Ion-Exchange Materials.</h4>
+<p class="authors">Hanay, S.B., et al.</p>
+<p class="venue">Gels, 7, 261. <a class="doi" href="https://doi.org/10.3390/gels7040261" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2021" data-search="2021 keikhosravani, p., et al. bioactivity and antibacterial behaviors of nanostructured lithium-doped hydroxyapatite for bone scaffold application. international journal of molecular sciences, 22, 9214.">
+<div class="pub-year">2021</div>
+<div>
+<h4>Bioactivity and Antibacterial Behaviors of Nanostructured Lithium-Doped Hydroxyapatite for Bone Scaffold Application.</h4>
+<p class="authors">Keikhosravani, P., et al.</p>
+<p class="venue">International Journal of Molecular Sciences, 22, 9214. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2021" data-search="2021 maleki-ghaleh, h., et al. antibacterial and cellular properties of novel zinc-doped hydroxyapatite/graphene nanocomposite for bone tissue engineering. international journal of molecular sciences, 22, 9564.">
+<div class="pub-year">2021</div>
+<div>
+<h4>Antibacterial and Cellular Properties of Novel Zinc-Doped Hydroxyapatite/Graphene Nanocomposite for Bone Tissue Engineering.</h4>
+<p class="authors">Maleki-Ghaleh, H., et al.</p>
+<p class="venue">International Journal of Molecular Sciences, 22, 9564. <a class="doi" href="https://doi.org/10.3390/ijms22179564" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2017" data-search="2017 fallah, a., & ahmadian, m.t. rate-dependent behavior of connective tissue through a micromechanics-based hyper viscoelastic model. international journal of engineering science, 121, 91–107.">
+<div class="pub-year">2017</div>
+<div>
+<h4>Rate-Dependent Behavior of Connective Tissue through a Micromechanics-Based Hyper Viscoelastic Model.</h4>
+<p class="authors">Fallah, A., &amp; Ahmadian, M.T.</p>
+<p class="venue">International Journal of Engineering Science, 121, 91–107. <a class="doi" href="https://doi.org/10.1016/j.ijengsci.2017.09.003" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2017" data-search="2017 fallah, a., ahmadian, m.t., firozbakhsh, k., & aghdam, m.m. micromechanical modelling of rate-dependent behavior of connective tissues. journal of theoretical biology, 416, 119–128.">
+<div class="pub-year">2017</div>
+<div>
+<h4>Micromechanical Modelling of Rate-Dependent Behavior of Connective Tissues.</h4>
+<p class="authors">Fallah, A., Ahmadian, M.T., Firozbakhsh, K., &amp; Aghdam, M.M.</p>
+<p class="venue">Journal of Theoretical Biology, 416, 119–128. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2016" data-search="2016 fallah, a., ahmadian, m.t., firozbakhsh, k., & aghdam, m.m. micromechanical and constitutive modelling of connective soft tissues. journal of the mechanical behavior of biomedical materials, 60, 157–176.">
+<div class="pub-year">2016</div>
+<div>
+<h4>Micromechanical and Constitutive Modelling of Connective Soft Tissues.</h4>
+<p class="authors">Fallah, A., Ahmadian, M.T., Firozbakhsh, K., &amp; Aghdam, M.M.</p>
+<p class="venue">Journal of the Mechanical Behavior of Biomedical Materials, 60, 157–176. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2014" data-search="2014 jahromi, h.n., fallah, a., & aghdam, m.m. nonlinear bending of functionally graded tapered beams subjected to thermal and mechanical loading. international journal of non-linear mechanics, 65, 141–147.">
+<div class="pub-year">2014</div>
+<div>
+<h4>Nonlinear Bending of Functionally Graded Tapered Beams Subjected to Thermal and Mechanical Loading.</h4>
+<p class="authors">Jahromi, H.N., Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">International Journal of Non-Linear Mechanics, 65, 141–147. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2013" data-search="2013 jahromi, h.n., aghdam, m.m., & fallah, a. free vibration analysis of mindlin plates partially resting on pasternak foundation. international journal of mechanical sciences, 75, 1–7.">
+<div class="pub-year">2013</div>
+<div>
+<h4>Free Vibration Analysis of Mindlin Plates Partially Resting on Pasternak Foundation.</h4>
+<p class="authors">Jahromi, H.N., Aghdam, M.M., &amp; Fallah, A.</p>
+<p class="venue">International Journal of Mechanical Sciences, 75, 1–7. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2012" data-search="2012 fallah, a., & aghdam, m.m. large-amplitude free vibration and post-buckling analysis of asymmetrically laminated beams on pasternak foundation. nonlinear engineering—modeling and application, 1, 35–48.">
+<div class="pub-year">2012</div>
+<div>
+<h4>Large-Amplitude Free Vibration and Post-Buckling Analysis of Asymmetrically Laminated Beams on Pasternak Foundation.</h4>
+<p class="authors">Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">Nonlinear Engineering—Modeling and Application, 1, 35–48. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2012" data-search="2012 fallah, a., aghdam, m.m., & kargarnovin, m.h. free vibration analysis of moderately thick functionally graded plates on elastic foundation using the extended kantorovich method. archive of applied mechanics.">
+<div class="pub-year">2012</div>
+<div>
+<h4>Free Vibration Analysis of Moderately Thick Functionally Graded Plates on Elastic Foundation Using the Extended Kantorovich Method.</h4>
+<p class="authors">Fallah, A., Aghdam, M.M., &amp; Kargarnovin, M.H.</p>
+<p class="venue">Archive of Applied Mechanics. <a class="doi" href="https://doi.org/10.1007/s00419-012-0645-1" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2012" data-search="2012 zamani, m., fallah, a., & aghdam, m.m. free vibration analysis of moderately thick trapezoidal symmetrically laminated plates with various boundary conditions. european journal of mechanics—a/solids, 36, 204–212.">
+<div class="pub-year">2012</div>
+<div>
+<h4>Free Vibration Analysis of Moderately Thick Trapezoidal Symmetrically Laminated Plates with Various Boundary Conditions.</h4>
+<p class="authors">Zamani, M., Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">European Journal of Mechanics—A/Solids, 36, 204–212. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2012" data-search="2012 fallah, a., & aghdam, m.m. thermo-mechanical buckling and nonlinear free-vibration analysis of functionally graded beams on nonlinear elastic foundation. composites part b: engineering, 43, 1523–1530.">
+<div class="pub-year">2012</div>
+<div>
+<h4>Thermo-Mechanical Buckling and Nonlinear Free-Vibration Analysis of Functionally Graded Beams on Nonlinear Elastic Foundation.</h4>
+<p class="authors">Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">Composites Part B: Engineering, 43, 1523–1530. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2011" data-search="2011 fallah, a., kargarnovin, m.h., & aghdam, m.m. free vibration analysis of symmetrically laminated fully clamped skew plates using the extended kantorovich method. key engineering materials, 471–472, 745–750.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Free Vibration Analysis of Symmetrically Laminated Fully Clamped Skew Plates Using the Extended Kantorovich Method.</h4>
+<p class="authors">Fallah, A., Kargarnovin, M.H., &amp; Aghdam, M.M.</p>
+<p class="venue">Key Engineering Materials, 471–472, 745–750. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2011" data-search="2011 fallah, a., shahsavari alavijeh, h., pasharavesh, a., & aghdam, m.m. large-amplitude thermo-mechanical vibration analysis of asymmetrically laminated composite beams. key engineering materials, 471–472.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Large-Amplitude Thermo-Mechanical Vibration Analysis of Asymmetrically Laminated Composite Beams.</h4>
+<p class="authors">Fallah, A., Shahsavari Alavijeh, H., Pasharavesh, A., &amp; Aghdam, M.M.</p>
+<p class="venue">Key Engineering Materials, 471–472. </p>
+</div>
+</article>
+<article class="pub-item" data-type="journal" data-year="2011" data-search="2011 fallah, a., & aghdam, m.m. nonlinear free vibration and post-buckling analysis of functionally graded beams on nonlinear elastic foundation. european journal of mechanics—a/solids, 30, 571–583.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Nonlinear Free Vibration and Post-Buckling Analysis of Functionally Graded Beams on Nonlinear Elastic Foundation.</h4>
+<p class="authors">Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">European Journal of Mechanics—A/Solids, 30, 571–583. </p>
+</div>
+</article>
+<article class="pub-item" data-type="book" data-year="forthcoming" data-search="forthcoming fallah, a., & aghdam, m.m. physics-informed neural network for solution of nonlinear differential equations. in r.n. jazar & l. dai (eds.), nonlinear approaches in engineering applications. springer, cham.">
+<div class="pub-year">forthcoming</div>
+<div>
+<h4>Physics-Informed Neural Network for Solution of Nonlinear Differential Equations.</h4>
+<p class="authors">Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">In R.N. Jazar &amp; L. Dai (Eds.), Nonlinear Approaches in Engineering Applications. Springer, Cham. </p>
+</div>
+</article>
+<article class="pub-item" data-type="book" data-year="2021" data-search="2021 daskalakis, e., et al. designing novel synthetic grafts for large bone defects: experimental and numerical studies. in experiments and simulations in advanced manufacturing. springer.">
+<div class="pub-year">2021</div>
+<div>
+<h4>Designing Novel Synthetic Grafts for Large Bone Defects: Experimental and Numerical Studies.</h4>
+<p class="authors">Daskalakis, E., et al.</p>
+<p class="venue">In Experiments and Simulations in Advanced Manufacturing. Springer. </p>
+</div>
+</article>
+<article class="pub-item" data-type="book" data-year="2016" data-search="2016 aghdam, m.m., & fallah, a. analytical solutions for the generalized duffing equation. in nonlinear approaches in engineering applications: advanced analysis of vehicle related technologies. springer.">
+<div class="pub-year">2016</div>
+<div>
+<h4>Analytical Solutions for the Generalized Duffing Equation.</h4>
+<p class="authors">Aghdam, M.M., &amp; Fallah, A.</p>
+<p class="venue">In Nonlinear Approaches in Engineering Applications: Advanced Analysis of Vehicle Related Technologies. Springer. <a class="doi" href="https://doi.org/10.1007/978-3-319-27055-5_8" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="book" data-year="2015" data-search="2015 aghdam, m.m., fallah, a., & haghi, p. nonlinear initial-value ordinary differential equations. in nonlinear approaches in engineering applications: dynamic systems and control. springer.">
+<div class="pub-year">2015</div>
+<div>
+<h4>Nonlinear Initial-Value Ordinary Differential Equations.</h4>
+<p class="authors">Aghdam, M.M., Fallah, A., &amp; Haghi, P.</p>
+<p class="venue">In Nonlinear Approaches in Engineering Applications: Dynamic Systems and Control. Springer. <a class="doi" href="https://doi.org/10.1007/978-3-319-09462-5_5" rel="noopener" target="_blank">DOI ↗</a></p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2025" data-search="2025 selamoğlu, s., & fallah, a. experimental characterization of thermally induced shape memory behavior of fused deposition modeling direct 4d-printed pla. advanced materials and additive manufacturing technologies (imeit 25), sivas, türkiye.">
+<div class="pub-year">2025</div>
+<div>
+<h4>Experimental Characterization of Thermally Induced Shape Memory Behavior of Fused Deposition Modeling Direct 4D-Printed PLA.</h4>
+<p class="authors">Selamoğlu, S., &amp; Fallah, A.</p>
+<p class="venue">Advanced Materials and Additive Manufacturing Technologies (IMEIT 25), Sivas, Türkiye. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2014" data-search="2014 fallah, a., & ahmadian, m.t. nonlinear free vibration of piezoelectric functionally graded beams in a thermal environment. asme imece 2014, canada.">
+<div class="pub-year">2014</div>
+<div>
+<h4>Nonlinear Free Vibration of Piezoelectric Functionally Graded Beams in a Thermal Environment.</h4>
+<p class="authors">Fallah, A., &amp; Ahmadian, M.T.</p>
+<p class="venue">ASME IMECE 2014, Canada. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 fallah, a., kargarnovin, m.h., & aghdam, m.m. free vibration analysis of functionally graded plates on elastic foundation using the extended kantorovich method. 16th international conference on composite structures, porto, portugal.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Free Vibration Analysis of Functionally Graded Plates on Elastic Foundation Using the Extended Kantorovich Method.</h4>
+<p class="authors">Fallah, A., Kargarnovin, M.H., &amp; Aghdam, M.M.</p>
+<p class="venue">16th International Conference on Composite Structures, Porto, Portugal. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 fallah, a., kargarnovin, m.h., & aghdam, m.m. free vibration analysis of symmetrically laminated fully clamped skew plates using the extended kantorovich method. 8th international conference on composite science and technology, kuala lumpur, malaysia.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Free Vibration Analysis of Symmetrically Laminated Fully Clamped Skew Plates Using the Extended Kantorovich Method.</h4>
+<p class="authors">Fallah, A., Kargarnovin, M.H., &amp; Aghdam, M.M.</p>
+<p class="venue">8th International Conference on Composite Science and Technology, Kuala Lumpur, Malaysia. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 fallah, a., shahsavari, h., pasharavesh, a.r., & aghdam, m.m. large-amplitude thermo-mechanical vibration analysis of asymmetrically laminated composite beams. 8th international conference on composite science and technology, kuala lumpur, malaysia.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Large-Amplitude Thermo-Mechanical Vibration Analysis of Asymmetrically Laminated Composite Beams.</h4>
+<p class="authors">Fallah, A., Shahsavari, H., Pasharavesh, A.R., &amp; Aghdam, M.M.</p>
+<p class="venue">8th International Conference on Composite Science and Technology, Kuala Lumpur, Malaysia. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 fallah, a., firozbakhsh, k., kahrobaiyan, m.h., & pasharavesh, a. nonlinear free vibration of nanobeams with surface effects. asme idetc/cie 2011, washington, dc, usa.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Nonlinear Free Vibration of Nanobeams with Surface Effects.</h4>
+<p class="authors">Fallah, A., Firozbakhsh, K., Kahrobaiyan, M.H., &amp; Pasharavesh, A.</p>
+<p class="venue">ASME IDETC/CIE 2011, Washington, DC, USA. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 fallah, a., firozbakhsh, k., & pasharavesh, a. nonlinear thermo-mechanical vibration analysis of functionally graded beams. asme idetc/cie 2011, washington, dc, usa.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Nonlinear Thermo-Mechanical Vibration Analysis of Functionally Graded Beams.</h4>
+<p class="authors">Fallah, A., Firozbakhsh, K., &amp; Pasharavesh, A.</p>
+<p class="venue">ASME IDETC/CIE 2011, Washington, DC, USA. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 ahmadian, m.t., pasharavesh, a., & fallah, a. application of nonlocal theory in dynamic pull-in analysis of electrostatically actuated micro- and nanobeams. asme idetc/cie 2011, washington, dc, usa.">
+<div class="pub-year">2011</div>
+<div>
+<h4>Application of Nonlocal Theory in Dynamic Pull-In Analysis of Electrostatically Actuated Micro- and Nanobeams.</h4>
+<p class="authors">Ahmadian, M.T., Pasharavesh, A., &amp; Fallah, A.</p>
+<p class="venue">ASME IDETC/CIE 2011, Washington, DC, USA. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2011" data-search="2011 kahrobaiyan, m.h., ahmadian, m.t., fallah, a., & firozbakhsh, k. on the static pull-in of circular microplates under capillary force. asme imece 2011, usa.">
+<div class="pub-year">2011</div>
+<div>
+<h4>On the Static Pull-In of Circular Microplates under Capillary Force.</h4>
+<p class="authors">Kahrobaiyan, M.H., Ahmadian, M.T., Fallah, A., &amp; Firozbakhsh, K.</p>
+<p class="venue">ASME IMECE 2011, USA. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2010" data-search="2010 fallah, a., aghdam, m.m., & pasharavesh, a.r. stress analysis of functionally graded cylinders subjected to thermo-mechanical loads based on bernstein polynomials. asme imece 2010, vancouver, canada.">
+<div class="pub-year">2010</div>
+<div>
+<h4>Stress Analysis of Functionally Graded Cylinders Subjected to Thermo-Mechanical Loads Based on Bernstein Polynomials.</h4>
+<p class="authors">Fallah, A., Aghdam, M.M., &amp; Pasharavesh, A.R.</p>
+<p class="venue">ASME IMECE 2010, Vancouver, Canada. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2010" data-search="2010 pasharavesh, r., fallah, a., & ahmadian, m.t. control of vibration amplitude, frequency, and damping of an electrostatically actuated microbeam using capacitive, inductive, and resistive elements. asme imece 2010, vancouver, canada.">
+<div class="pub-year">2010</div>
+<div>
+<h4>Control of Vibration Amplitude, Frequency, and Damping of an Electrostatically Actuated Microbeam Using Capacitive, Inductive, and Resistive Elements.</h4>
+<p class="authors">Pasharavesh, R., Fallah, A., &amp; Ahmadian, M.T.</p>
+<p class="venue">ASME IMECE 2010, Vancouver, Canada. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2010" data-search="2010 fallah, a., & aghdam, m.m. bending analysis of laminated skew plates using the extended kantorovich method. 2nd international conference on composites, characterization, fabrication and application, kish island, iran.">
+<div class="pub-year">2010</div>
+<div>
+<h4>Bending Analysis of Laminated Skew Plates Using the Extended Kantorovich Method.</h4>
+<p class="authors">Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">2nd International Conference on Composites, Characterization, Fabrication and Application, Kish Island, Iran. </p>
+</div>
+</article>
+<article class="pub-item" data-type="conference" data-year="2010" data-search="2010 fallah, a., & aghdam, m.m. a new technique for stress analysis of functionally graded pressure vessels based on bernstein polynomials. isme conference, sharif university, tehran, iran.">
+<div class="pub-year">2010</div>
+<div>
+<h4>A New Technique for Stress Analysis of Functionally Graded Pressure Vessels Based on Bernstein Polynomials.</h4>
+<p class="authors">Fallah, A., &amp; Aghdam, M.M.</p>
+<p class="venue">ISME Conference, Sharif University, Tehran, Iran. </p>
+</div>
+</article></div>
+</div>
+</section>
+
+<section class="white" id="teaching">
+<div class="wrap">
+<div class="head"><div><span class="tag">Teaching</span><h2>Teaching & curriculum development</h2></div><p>English-medium engineering education integrating theory, simulation, manufacturing, laboratory work, and open-ended design projects.</p></div>
+<div class="teaching">
+<div class="card">
+<h3 style="margin-top:0;color:var(--navy)">Courses</h3>
+<div class="course"><b>Introduction to Additive Manufacturing</b><span>Additive-manufacturing processes, design, materials, hands-on fabrication, and project work.</span></div>
+<div class="course"><b>Vehicle Dynamics</b><span>Mechanics-based analysis of vehicle response and performance.</span></div>
+<div class="course"><b>Chassis Design</b><span>Engineering design and analysis of chassis systems.</span></div>
+<div class="course"><b>Manufacturing and Materials Technology</b><span>Materials, processing, and production principles for engineering systems.</span></div>
+<div class="course"><b>Capstone Design</b><span>Supervised, open-ended engineering design projects.</span></div>
+</div>
+<div class="card">
+<h3 style="margin-top:0;color:var(--navy)">Curriculum & mentoring</h3>
+<p style="color:var(--muted)">Developed <strong>Introduction to Additive Manufacturing</strong> and <strong>Physics-Informed Machine Learning for Engineering Applications</strong>, both approved and incorporated into the curriculum.</p>
+<p style="color:var(--muted)">Teaching integrates ANSYS, MATLAB, Python, nTop, laboratory activities, additive manufacturing, and responsible use of AI tools.</p>
+<p style="color:var(--muted)">Supervision and mentoring span postdoctoral, PhD, MSc, and undergraduate research in computational mechanics, additive manufacturing, smart materials, and scientific machine learning.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="opportunities">
+<div class="wrap">
+<div class="head"><div><span class="tag">Opportunities</span><h2>Graduate research & collaboration</h2></div><p>I welcome research discussions and collaboration around computational mechanics, advanced manufacturing, smart materials, and scientific machine learning.</p></div>
+<div class="opportunities">
+<div class="card">
+<h3 style="margin-top:0;color:var(--navy)">Potential research topics</h3>
+<div class="topic-grid">
+<div class="topic">Physics-informed neural networks for mechanics</div>
+<div class="topic">Neural operators for PDE-driven engineering</div>
+<div class="topic">Digital twins for additive manufacturing</div>
+<div class="topic">4D-printed smart structures</div>
+<div class="topic">Auxetic & mechanical metamaterials</div>
+<div class="topic">Phononic structures & inverse design</div>
+<div class="topic">Continuous-fiber printed composites</div>
+<div class="topic">Micromechanics & multiscale modelling</div>
+</div>
+</div>
+<div class="card">
+<h3 style="margin-top:0;color:var(--navy)">For prospective students</h3>
+<p style="color:var(--muted)">Prospective MSc/PhD students interested in these areas are welcome to contact me with a short introduction, CV, academic background, and a brief description of their research interests.</p>
+<p style="color:var(--muted)">Specific availability depends on active projects, university admission procedures, and scholarship opportunities.</p>
+<a class="btn primary" href="mailto:ali.fallah@atilim.edu.tr?subject=Prospective%20Graduate%20Student">Contact by email</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="cta" id="contact">
+<div>
+<span class="tag" style="background:rgba(255,255,255,.11);color:#d4edf7">Contact</span>
+<h2>Research collaboration, students & academic inquiries</h2>
+<p>Department of Automotive Engineering, Atılım University, Ankara, Türkiye</p>
+</div>
+<div class="ctalinks">
+<a href="mailto:ali.fallah@atilim.edu.tr">ali.fallah@atilim.edu.tr</a>
+<a href="https://www.linkedin.com/in/ali-fallah-b1309411a" target="_blank" rel="noopener">LinkedIn ↗</a>
+<a href="https://orcid.org/0000-0002-7744-4246" target="_blank" rel="noopener">ORCID ↗</a>
+<a href="assets/Ali-Fallah-CV.pdf" target="_blank">Download academic CV ↗</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> Ali Fallah · Atılım University</div></footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const items=[...document.querySelectorAll('.pub-item')];
+const q=document.getElementById('search'), count=document.getElementById('count');
+const buttons=[...document.querySelectorAll('.filters button')];
+let filter='all';
+function update(){
+ const term=q.value.trim().toLowerCase(); let visible=0;
+ items.forEach(el=>{
+   const okType=filter==='all'||el.dataset.type===filter;
+   const okText=!term||(el.dataset.search||'').toLowerCase().includes(term);
+   const ok=okType&&okText; el.classList.toggle('hidden',!ok); if(ok) visible++;
+ });
+ count.textContent=visible+' item'+(visible===1?'':'s')+' shown';
+}
+q.addEventListener('input',update);
+buttons.forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');update();}));
+update();
+</script>
+</body>
+</html>
